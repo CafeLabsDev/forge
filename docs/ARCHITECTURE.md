@@ -17,21 +17,27 @@ involve, delegates to them, and synthesizes their output back to the user.
   want to validate a product idea — defined declaratively via the agent's
   `description` trigger, no explicit command needed.
 - Conducts an initial discovery before involving any specialist: problem,
-  target audience, platform(s), timeline, and budget constraints (e.g. "must run
-  on free tiers" vs. paid infrastructure). When a design specialist is in scope,
-  it also asks about design ambition — safe/proven (native UI patterns, lower
+  target audience, platform(s), timeline, and budget constraints. Budget is not
+  a checkbox — for any stack/infrastructure decision with more than one viable
+  path, it lays out the concrete options by name (free/self-hosted vs. paid,
+  with what each actually buys and costs) and lets the user pick, rather than
+  defaulting to "free tier" as if cost were the only axis that mattered. Cost
+  is the user's constraint to weigh, not the orchestrator's to assume — a paid
+  option is sometimes the right call. When a design specialist is in scope, it
+  also asks about design ambition — safe/proven (native UI patterns, lower
   risk, faster) vs. bold/experimental (custom visual identity, more time/risk,
   more differentiation) — skipping the question for disposable MVPs, where fast
   validation matters more than form, and defaulting to safe/proven.
 - Decides which specialists to involve — only the ones relevant to the scope,
   never all of them by default.
-- Has authority to decide technically on its own, always optimizing in this
-  order: cost (prefer a plausible free tier), solo-maintainer simplicity,
-  reasonable scalability without over-engineering, current stack practices.
+- Has authority to decide technically on its own only for low-stakes,
+  reversible implementation details. Anything that shapes the stack itself
+  (backend, hosting, free vs. paid, framework) is brought to the user as
+  concrete options, never decided alone.
 - Surfaces decisions and trade-offs before proceeding. Never asks trivial
   questions, but also never unilaterally makes an expensive or hard-to-reverse
   decision (e.g. backend choice, monetization model) without exposing the
-  options first.
+  options first, paid ones included.
 
 ### Specialists
 
