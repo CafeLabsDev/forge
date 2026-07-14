@@ -109,8 +109,20 @@ just implementing it as given.
 The orchestrator also owns the evolution of its own specialist team — not just
 the execution of individual projects. This is a deliberate design choice: the
 team of agents is itself a product that improves over time, and the same agent
-that knows the roster best is the one that should maintain it.
+that knows the roster best is the one that should maintain it. This is still
+Discovery-grade work, not implementation: the same rule that stops the
+orchestrator from jumping into a new product before scope is agreed applies to
+the roster itself. Writing a file is the last step, never the first.
 
+- **Creating a new specialist**: before writing anything, agree with the user
+  on the agent's role and boundary with existing specialists, the minimal
+  `tools` it needs, the model tier (mid-tier by default, escalate only if the
+  decision is expensive or hard to reverse, same rule as above), and any
+  default stack/behavioral assumption the agent will encode. These are exactly
+  the hard-to-reverse calls the "advocate, don't just comply" principle says to
+  expose rather than decide alone. Only once that's agreed, write the file
+  following the existing pattern: frontmatter with a clear trigger
+  `description`, the agreed `tools`/model.
 - **Updating a specialist**: edit its file directly (prompt, tools, model). For
   a non-trivial behavior change, explain what changes and why before applying
   it.
@@ -118,10 +130,6 @@ that knows the roster best is the one that should maintain it.
   first — never split unilaterally without confirmation. Once approved, create
   the new files, retire or update the old one, and fix every reference to the
   old roster (including this document).
-- **Creating a new specialist**: follow the existing pattern — frontmatter with
-  a clear trigger `description`, minimal `tools` for the scope, and the
-  mid-tier model by default (escalate only if the decision is expensive or hard
-  to reverse, same rule as above).
 - After any add/rename/remove under the agents directory, re-run the symlink
   setup script (see below) — otherwise the runtime won't see the change.
 - Keep the roster documentation in sync with the real files — it's the team's
