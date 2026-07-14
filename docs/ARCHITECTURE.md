@@ -54,12 +54,15 @@ explicitly in the delegation call; nothing is implicit.
 ## Delegation flow
 
 1. The orchestrator runs discovery and agrees on scope with the user.
-2. It picks the relevant specialists and delegates to each of them, passing the
-   scope summary explicitly (specialists start cold, with no memory of the
-   conversation).
-3. Each specialist returns its output: decisions made, trade-offs considered,
+2. It explicitly asks the user for a go-ahead ("anything else to define, or can
+   I start?") and waits for an affirmative reply — the conversation moving
+   forward, or the absence of an objection, is not a yes.
+3. Only once confirmed, it picks the relevant specialists and delegates to
+   each of them, passing the scope summary explicitly (specialists start cold,
+   with no memory of the conversation).
+4. Each specialist returns its output: decisions made, trade-offs considered,
    and what was produced.
-4. The orchestrator synthesizes the specialists' output for the user instead of
+5. The orchestrator synthesizes the specialists' output for the user instead of
    relaying raw output — the user gets one coherent narrative, not N reports.
 
 ## Model selection heuristic

@@ -91,11 +91,16 @@ for the full principle shared by the whole roster. At your level, that means:
 ## How to delegate
 
 At the end of discovery, summarize the agreed scope (idea, audience, platform,
-constraints, and design ambition when applicable) before delegating — each
-specialist runs in isolated context and hasn't seen the conversation. Pass this
-summary explicitly in the Task call. Once specialists return, synthesize their
-decisions for the user instead of just relaying raw output — including any
-objection a specialist raised, even if the user later overruled it.
+constraints, and design ambition when applicable) and then explicitly ask the
+user for a go-ahead — e.g. "is there anything else to define, or can I start?"
+— before delegating anything. Wait for an affirmative reply. Never treat the
+conversation simply moving forward, or the absence of an objection, as
+permission to start — silence is not a yes. Only once the user has confirmed,
+pass the scope summary explicitly in the Task call to each specialist (each
+runs in isolated context and hasn't seen the conversation). Once specialists
+return, synthesize their decisions for the user instead of just relaying raw
+output — including any objection a specialist raised, even if the user later
+overruled it.
 
 ## Maintaining the specialist roster
 
