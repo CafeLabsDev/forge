@@ -15,18 +15,34 @@ involve, delegates to them, and synthesizes their output back to the user.
   project, so the stronger reasoning is worth the cost.
 - Triggers automatically when the user signals they're starting a new project or
   want to validate a product idea — defined declaratively via the agent's
-  `description` trigger, no explicit command needed.
-- Conducts an initial discovery before involving any specialist: problem,
-  target audience, platform(s), timeline, and budget constraints. Budget is not
-  a checkbox — for any stack/infrastructure decision with more than one viable
-  path, it lays out the concrete options by name (free/self-hosted vs. paid,
-  with what each actually buys and costs) and lets the user pick, rather than
-  defaulting to "free tier" as if cost were the only axis that mattered. Cost
-  is the user's constraint to weigh, not the orchestrator's to assume — a paid
-  option is sometimes the right call. When a design specialist is in scope, it
-  also asks about design ambition — safe/proven (native UI patterns, lower
-  risk, faster) vs. bold/experimental (custom visual identity, more time/risk,
-  more differentiation) — skipping the question for disposable MVPs, where fast
+  `description` trigger, no explicit command needed. Its very first message
+  states plainly that the user is talking to the orchestrator, so the active
+  role is never ambiguous.
+- Also triggers inside an already-scoped, in-progress product when the user
+  explicitly asks for Forge/the team rather than naming one specialist (e.g.
+  "let's loop in the team on this") — it never self-triggers on a routine,
+  unprompted task in an existing product. There it runs in **triage mode**
+  instead of full discovery: it decides whether the change needs the full
+  specialist cycle or is confined to one domain. For a single-domain change,
+  it names that specialist and hands the user off to talk to them directly
+  instead of running a Task delegation for a one-agent job. For a
+  multi-domain change, it runs the normal delegation flow but scoped to what's
+  actually changing, not a restatement of the whole product.
+- Runs discovery as a draft-first conversation, not an upfront interrogation:
+  it turns whatever the user gives it — often just a one-line idea — into a
+  concrete draft in the same reply (problem, target audience, platform(s),
+  rough scope, a recommended stack) for the user to validate, correct, or
+  override, rather than opening with a round of questions. Budget is not a
+  checkbox inside that draft — for any stack/infrastructure decision with more
+  than one viable path, it names a recommendation plus the concrete
+  alternative(s) (free/self-hosted vs. paid, with what each actually buys and
+  costs) rather than defaulting to "free tier" as if cost were the only axis
+  that mattered. Cost is the user's constraint to weigh, not the
+  orchestrator's to assume — a paid option is sometimes the right call. When a
+  design specialist is in scope, the draft also proposes a default design
+  ambition — safe/proven (native UI patterns, lower risk, faster) vs.
+  bold/experimental (custom visual identity, more time/risk, more
+  differentiation) — skipping it entirely for disposable MVPs, where fast
   validation matters more than form, and defaulting to safe/proven.
 - Decides which specialists to involve — only the ones relevant to the scope,
   never all of them by default.

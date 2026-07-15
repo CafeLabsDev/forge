@@ -25,22 +25,30 @@ This symlinks every agent in `agents/` into `~/.claude/agents/`, so Claude Code
 picks them up as subagent types. Say something like "I want to start a new
 project" or "I have an idea for an app" to trigger the `orchestrator` agent.
 
+Already mid-project and want the team's help routing a change instead? Say
+something like "I want to use Forge for this" or "let's loop in the team" —
+the orchestrator switches to triage mode: it decides whether the change needs
+the full specialist cycle or just one specialist, and either names that
+specialist for you to talk to directly or runs a scoped version of the
+delegation flow.
+
 ## Example session
 
 ```
 you:          I have an idea for an app that helps small gyms schedule classes
               and manage member check-ins.
 
-orchestrator: [runs discovery] Who's the first customer — a specific gym, or
-              gyms in general? What's the timeline and budget? Web, mobile, or
-              both? ...
+orchestrator: [introduces itself, then drafts a proposal instead of asking a
+              round of questions] Assuming: first customer is one specific
+              gym (not "gyms" broadly, which would blow up the scope),
+              mobile-only, 2-3 week timeline, free-tier stack (Supabase) to
+              keep cost at zero — does that match, or is any of it off?
 
-you:          One gym I already talk to, mobile only, free tier only, want
-              something in 2-3 weeks.
+you:          Yes to gym/mobile, but I've got a bit more time and don't mind a
+              small monthly cost if it removes a real limit.
 
-orchestrator: [flags that "gyms in general" would've been too broad, confirms
-              the narrower scope is workable in that timeline, summarizes it,
-              and delegates]
+orchestrator: [adjusts the stack recommendation given the extra time/budget,
+              confirms the final scope, asks for the go-ahead, and delegates]
               -> product: validates the hypothesis, defines v1 scope and
                  success criteria
               -> design: flows + wireframes for booking and check-in
