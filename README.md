@@ -55,6 +55,7 @@ orchestrator: [adjusts the stack recommendation given the extra time/budget,
               -> backend: data model, auth, security rules
               -> mobile: implementation
               -> qa: test plan for the critical booking/check-in path
+              -> docs: README + architecture doc for a cold read
 
 orchestrator: [synthesizes all of the above into one coherent plan, flags any
               trade-off or push-back a specialist raised along the way]
